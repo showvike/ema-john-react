@@ -58,3 +58,7 @@
   font-family: "Lato", sans-serif;
   color: #0e161a;
 }
+
+.btn-cart i {
+  margin-left: 3px;
+}

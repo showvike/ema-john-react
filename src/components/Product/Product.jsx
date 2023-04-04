@@ -18,7 +18,9 @@ const Product = (props) => {
         </div>
       </div>
       <div>
-        <button className="btn-cart">Add to Cart</button>
+        <button className="btn-cart">
+          Add to Cart<i class="fa-solid fa-cart-plus"></i>
+        </button>
       </div>
     </div>
   );
