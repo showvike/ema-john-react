@@ -59,6 +59,10 @@
   color: #0e161a;
 }
 
-.btn-cart i {
+.fa-cart-plus {
   margin-left: 3px;
+}
+
+.btn-cart:hover {
+  background-color: orange;
 }
