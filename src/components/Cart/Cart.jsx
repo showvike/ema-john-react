@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Cart.css";
 
 const Cart = ({ cart }) => {
+  console.log(cart);
   const orderSummary = cart.reduce(
     (prev, next) => ({
       totalPrice: prev.totalPrice + next.price,
