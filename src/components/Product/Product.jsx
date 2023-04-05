@@ -12,7 +12,7 @@ const Product = (props) => {
       </div>
       <div className="product-info">
         <div>
-          <p className="product-name">{name}</p>
+          <h6 className="product-name">{name}</h6>
           <p className="product-price">Price: ${price}</p>
         </div>
         <div>
