@@ -3,28 +3,34 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Cart.css";
 
 const Cart = ({ cart }) => {
-  console.log(cart);
   const orderSummary = cart.reduce(
     (prev, next) => ({
-      totalPrice: prev.totalPrice + next.price,
-      totalShippingCharge: prev.totalShippingCharge + next.shipping,
-      tax: prev.tax + (next.price * 7) / 100,
+      totalPrice: prev.totalPrice + next.price * next.quantity,
+      totalShippingCharge:
+        prev.totalShippingCharge + next.shipping * next.quantity,
+      tax: prev.tax + ((next.price * 7) / 100) * next.quantity,
       grandTotal:
-        prev.grandTotal + next.price + next.shipping + (next.price * 7) / 100,
+        prev.grandTotal +
+        next.price * next.quantity +
+        next.shipping * next.quantity +
+        ((next.price * 7) / 100) * next.quantity,
+      quantity: prev.quantity + next.quantity,
     }),
     {
       totalPrice: 0,
       totalShippingCharge: 0,
       tax: 0,
       grandTotal: 0,
+      quantity: 0,
     }
   );
-  const { totalPrice, totalShippingCharge, tax, grandTotal } = orderSummary;
+  const { totalPrice, totalShippingCharge, tax, grandTotal, quantity } =
+    orderSummary;
   return (
     <div className="cart">
       <h5>Order Summary</h5>
       <div>
-        <p>Selected Items: {cart.length}</p>
+        <p>Selected Items: {quantity}</p>
         <p>Total Price: ${totalPrice}</p>
         <p>Total Shipping Charge: ${totalShippingCharge}</p>
         <p>Tax: ${tax.toFixed(2)}</p>
