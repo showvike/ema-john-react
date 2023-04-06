@@ -9,15 +9,17 @@ const Cart = ({ cart }) => {
       totalPrice: prev.totalPrice + next.price,
       totalShippingCharge: prev.totalShippingCharge + next.shipping,
       tax: prev.tax + (next.price * 7) / 100,
+      grandTotal:
+        prev.grandTotal + next.price + next.shipping + (next.price * 7) / 100,
     }),
     {
       totalPrice: 0,
       totalShippingCharge: 0,
       tax: 0,
+      grandTotal: 0,
     }
   );
-  const { totalPrice, totalShippingCharge, tax } = orderSummary;
-  const grandTotal = totalPrice + totalShippingCharge + tax;
+  const { totalPrice, totalShippingCharge, tax, grandTotal } = orderSummary;
   return (
     <div className="cart">
       <h5>Order Summary</h5>

@@ -1,20 +1,21 @@
 .product {
   height: 520px;
+  width: 300px;
   border: 1px solid #95a0a7;
   border-radius: 8px;
   position: relative;
 }
 
-.product > div:nth-child(1) {
+.product > div:first-child {
   width: 286px;
   height: 286px;
-  border-radius: 8px;
   padding: 7px;
 }
 
 .product img {
   width: 286px;
   height: 286px;
+  border-radius: 8px;
 }
 
 .product-info {
