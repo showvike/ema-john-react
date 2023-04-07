@@ -2,7 +2,7 @@ import { faArrowRight, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Cart.css";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, handleClearCart }) => {
   const orderSummary = cart.reduce(
     (prev, next) => ({
       totalPrice: prev.totalPrice + next.price * next.quantity,
@@ -37,7 +37,7 @@ const Cart = ({ cart }) => {
       </div>
       <h6>Grand Total: ${grandTotal.toFixed(2)}</h6>
       <div className="buttons">
-        <button>
+        <button onClick={handleClearCart}>
           Clear Cart
           <FontAwesomeIcon className="fa-trash-can" icon={faTrashCan} />
         </button>
