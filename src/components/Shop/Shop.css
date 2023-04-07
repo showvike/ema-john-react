@@ -9,3 +9,7 @@
   gap: 50px;
   margin: 100px 40px 0 80px;
 }
+
+.shop a {
+  text-decoration: none;
+}
