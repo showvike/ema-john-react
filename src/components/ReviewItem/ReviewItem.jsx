@@ -1,7 +1,7 @@
 import React from "react";
 import "./ReviewItem.css";
 
-const ReviewItem = ({ product }) => {
+const ReviewItem = ({ product, handleCart }) => {
   const { img, name, price, quantity, id } = product;
   return (
     <div className="review-item">
@@ -14,7 +14,7 @@ const ReviewItem = ({ product }) => {
         <p>Quantity: {quantity}</p>
       </div>
       <div>
-        <button>Delete</button>
+        <button onClick={() => handleCart(id)}>Delete</button>
       </div>
     </div>
   );
