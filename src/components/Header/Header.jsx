@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "./../../images/Logo.svg";
 import "./Header.css";
 
@@ -7,20 +8,22 @@ const Header = () => {
       <header>
         <nav className="header">
           <div>
-            <img src={Logo} alt="Ema John Logo" />
+            <Link to="/">
+              <img src={Logo} alt="Ema John Logo" />
+            </Link>
           </div>
           <ul>
             <li>
-              <a href="#">Order</a>
+              <Link to="/order">Order</Link>
             </li>
             <li>
-              <a href="#">Order Review</a>
+              <Link to="/review">Order Review</Link>
             </li>
             <li>
-              <a href="#">Manage Inventory</a>
+              <Link to="/inventory">Manage Inventory</Link>
             </li>
             <li>
-              <a href="#">Login</a>
+              <Link to="/login">Login</Link>
             </li>
           </ul>
         </nav>
